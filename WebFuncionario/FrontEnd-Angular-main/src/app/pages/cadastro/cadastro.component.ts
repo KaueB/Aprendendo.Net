@@ -22,8 +22,7 @@ export class CadastroComponent {
 
   createFuncionario(funcionario: Funcionario) {
     this.FuncionarioService.CreateFuncionario(funcionario).subscribe((data) => {
-      console.log(data);
-      /* this.router.navigate(['/']) */
+      this.router.navigate(['/'])
     });
   }
 }

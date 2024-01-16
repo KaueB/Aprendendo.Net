@@ -1,6 +1,6 @@
 <div class="container">
-  
-  <h1>funcionário</h1>
+
+  <h1 class="heading">funcionário</h1>
 
   <div class="funcionario-box">
 
@@ -8,15 +8,14 @@
 
     <div class="input-box">
       <label>Procurar:</label>
-      <input type="text" placeholder="Qual registro está buscando?" (input)="search($event)"> 
+      <input type="text" placeholder="Qual registro está buscando?" (input)="search($event)">
     </div>
-    
+
   </div>
 
   <table class="table">
 
     <thead>
-
       <tr>
         <th></th>
         <th>Nome</th>
@@ -24,17 +23,15 @@
         <th>Departamento</th>
         <th></th>
         <th></th>
-
       </tr>
-
     </thead>
 
     <tbody *ngFor="let funcionario of funcionarios">
       <tr>
-        <td>
+        <td class="active">
           <div *ngIf="funcionario.ativo == true; then ativo else inativo"></div>
           <ng-template #ativo>
-            <span class="dot-active"></span>
+            <svg class="dot-active" width="15px" height="15px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet"><circle fill="#78B159" cx="18" cy="18" r="18"></circle></svg>
           </ng-template>
           <ng-template #inativo>
             <span class="dot-inactive"></span>
